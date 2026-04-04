@@ -252,6 +252,3 @@ All errors return a consistent JSON body:
 
 ---
 
-## 📄 License
-
-This project is for educational purposes.
