@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/notes")
 @RequiredArgsConstructor
@@ -38,11 +39,10 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> createNote(@Valid @RequestBody NoteRequest noteRequest, Authentication authentication) {
-        CommonResponse response =
-                userService.createNote(noteRequest, authentication.getName()).getBody();
-
-        return ResponseEntity.status(201).body(response);
-
+        // FIX: Return the ResponseEntity directly from the service.
+        // The old code called .getBody() to unwrap it, then re-wrapped it — unnecessary
+        // and risks sending a null body if getBody() returns null.
+        return userService.createNote(noteRequest, authentication.getName());
     }
 
     @PutMapping("/{id}")

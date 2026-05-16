@@ -15,6 +15,7 @@ import java.util.NoSuchElementException;
 @RequestMapping("/api/admin")
 @RequiredArgsConstructor
 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+@CrossOrigin
 public class AdminController {
 
     private final AdminService adminService;
