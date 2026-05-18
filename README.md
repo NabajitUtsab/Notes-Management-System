@@ -66,7 +66,7 @@ src/main/java/com/example/Notes_Management_Api/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/notes-management-api.git
+git clone https://github.com/NabajitUtsab/Notes-Management-System.git
 cd notes-management-api
 ```
 
