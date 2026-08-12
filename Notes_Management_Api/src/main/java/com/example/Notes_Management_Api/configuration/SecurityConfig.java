@@ -35,6 +35,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login").permitAll()
                         .requestMatchers("/api/auth/register/user").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/api/health").permitAll()
 
                         // SECURED: admin registration requires an existing admin token
                         // Only a logged-in ROLE_ADMIN can create new admin accounts
